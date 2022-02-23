@@ -13,7 +13,7 @@ shop.addEventListener ('click', ()=>{
     alert (`Aucun produit n'a été séléctionné !`);
 })
 
-// message de la news letter
+// message de la newsletter
 let newsLt = document.querySelector('.newsLetter');
 newsLt.addEventListener('click', ()=>{
     alert (`Votre demande a bien été enregistrée ! Desormais, vous êtes inscrit à la newsletter de Parimis hôtel !`);
