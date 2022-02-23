@@ -1,0 +1,2014 @@
+/* GENERIQUE */
+*,
+*::after,
+*::before{
+	box-sizing: border-box;
+}
+:root{
+    --gray : #363636;
+    --light-gray: #6e6b6b;
+    --lighter-gray: #cccccc;
+    --darker-gray:#222222;
+    --ocre :#e3b87d;
+    --white-bckg-text : #fafafa ; 
+    /* other color  #f2f2f2*/
+    font-size: 62.5%;/* 10px*/
+	scroll-behavior: smooth;
+}
+body{
+    font-family: 'Vollkorn', sans-serif;
+    font-size: 1.6rem;
+    color: var(--gray-text);
+    background-color: var(--white-bckg-text);
+}
+a{
+    text-decoration: none;
+    color: var(--ocre);
+}
+/* span{
+    color: var(--graylight-text);
+} */
+li{
+    list-style: none;
+}
+ul{
+    padding: 0;
+}
+a:link{
+    text-decoration: none;
+}
+
+a:visited{
+    color: var(--white-bckg-text);
+}
+a:hover{
+    color: var(--ocre);
+}
+.gold{
+    color: var(--ocre);
+}
+
+
+/*font-family: 'Vollkorn SC', serif; */
+
+/* ********************************************************************* */
+/*                             HEADER                                    */
+/* ********************************************************************* */
+
+header{
+    background-color: var(--darker-gray);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* ***************      LANGUAGES PICKER         *************** */
+
+/* ici je sélectionne la partie du header dans laquelle se trouve le choix de langues et le panier pour les mettre des deux côté de l'écran*/
+header aside:first-child{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+/* positionnenement du choix de langues dans la fenêtres */
+header aside:first-child div{
+    padding-top: 20px;
+    margin-left: 20px;
+    font-size: 1.2rem;
+}
+header aside:first-child a{
+    text-transform: uppercase;
+    color: var(--white-bckg-text);
+    padding-top: 20px;
+}
+/* la barre de séparation entre les deux langues */
+.languages a:first-child::after{
+    content: "";
+    border: 1px solid var(--ocre);
+    margin-left: 3px;
+}
+
+/* ***************      SHOPING BASKET          *************** */
+
+header aside p{
+    margin-right: 20px;
+    transition: all .3s ease-in-out;
+}
+
+header aside p a i:hover{
+    color: var(--ocre);
+}
+
+/* ***************      SEARCH BOX          *************** */
+.search-box{
+    margin: 20px;
+    background-color: var(--ocre);
+    border-radius: 40px;
+    padding: 10px;
+}
+.search-box:hover > .search-txt{
+    width: 240px;
+    padding: 0 6px;
+}
+.search-box:hover > .search-btn{
+    color: var(--darker-gray);
+}
+.search-btn{
+    color: var(--gray);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--ocre);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+    font-size: 1.5rem;
+}
+.search-txt{
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 1.5rem;
+    transition: .5s;
+    line-height: 2rem;
+    width: 0px;
+}
+
+
+/* ********************************************************************* */
+/*                             NAV                                       */
+/* ********************************************************************* */
+
+/* couleur de fond pour la barre de navigation */
+nav{
+    background-color: var(--gray);
+}
+/* première partie dans la barre de navigation contient : le logo, le nom de l'hôtel et le slogan */
+nav aside:first-child{
+    text-align: center;
+    padding-top: 20px;
+}
+nav aside:first-child img{
+    width: 10rem;
+}
+nav h1{
+    color: var(--ocre);
+    font-family: 'Vollkorn SC', sans-serif;
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin: 0 auto;
+    /* text-decoration: underline; */
+}
+nav h2{
+    color: var(--ocre);
+    font-size: 1.6rem;
+    margin-top: 0;
+    font-weight: 100;
+    padding-bottom: 20px;
+}
+
+.responsiveMenu{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.burger_list{
+display: none;
+align-items: center;
+flex-direction: column;
+text-align: center;
+width: 100%;
+margin-bottom: 0;
+padding-bottom: 0;
+transition: .3s ease-in-out;
+}
+
+.burger_list li:hover{
+    width: inherit;
+    background-color: var(--ocre);
+}
+.burger_list li a:hover{
+    color: var(--darker-gray);
+}
+
+.nav_toggle {
+background-color: transparent;
+padding: 2rem .5rem;
+border: 0;
+border-radius: .25rem 0 0 .25rem; 
+}
+.hamburger {
+display: block;
+position: relative;
+}
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+width: 2em;
+height: 3px;
+background-color: var(--white-bckg-text);
+transition: transform 350ms ease-in-out, opacity 200ms linear;
+}
+.hamburger::before,
+.hamburger::after {
+content: '';
+position: absolute;
+left: 0;
+}
+/* Navigation open styles */
+.nav-open .nav {
+transform: translateX(0);
+}
+/* Change this stuff below */
+.nav-open .hamburger {
+transform: rotate(45deg);
+}
+.nav-open .hamburger::before {
+opacity: 0;
+}
+.nav-open .hamburger::after {
+transform: rotate(90deg) translate(-6px);
+}
+.hamburger::before { bottom: 6px; }
+.hamburger::after { top: 6px;}
+
+
+/* ***************************************** */
+
+.responsiveMenu ul{
+    display: none;
+    justify-content: space-around;
+}
+
+.responsiveMenu li{
+    /* menu not responsive */
+    display: inline-block;
+    padding: 20px 0;
+    width: 17%;
+    text-align: center;
+}
+
+.responsiveMenu li a{
+    /* background-color: yellow; */
+    /* commen for all */
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.3rem;
+    color: var(--white-bckg-text);
+}
+
+.menu {
+    display: none;
+}
+
+
+.sticky{
+    /* une classe ajoutée dans JavaScript pour menu non responsive ('.class) */
+    width: 100%;
+    padding-top: 0;
+    position:fixed;
+    top: 0;
+    background-color: var(--gray);
+    z-index: 1;
+}
+
+
+/* ********************************************************************* */
+/*                       MAIN - ROOM                              */
+/* ********************************************************************* */
+
+#main_room{
+    margin: 1rem;
+}
+
+#main_room > aside {
+    display: none;
+}
+
+.container_room{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.container_room h1{
+    text-align: center;
+}
+.container_room div img{
+    display: block;
+    width: 100%;
+}
+
+.container_room h2{
+    text-align: justify;
+}
+
+.links_room {
+    display: flex;
+    justify-content: space-around;
+}
+.links_room > div{
+    padding: 1rem;
+    width: 100%;
+    background-color: var(--light-gray);
+    margin: 0 .2rem;
+    text-align: center;
+    transition: all .4s ease-in-out;
+}
+.links_room > div:hover{
+    background-color: var(--ocre);
+}
+
+.links_room > div:hover a{
+    color: var(--gray);
+}
+
+
+
+/* ********************************************************************* */
+/*                       MAIN - CHAMBRES CLASSIQUES                              */
+/* ********************************************************************* */
+
+#main_chambre{
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#main_chambre > aside {
+    display: none;
+}
+
+.chambre h1{
+    text-align: center;
+}
+.chambre > p{
+    text-align: justify;
+}
+.chambre_slide{
+    width: 100%;
+}
+.chambre_slide img{
+    display: block;
+    width: 100%;
+}
+
+/* #main_chambre  */
+
+.chambre_info{
+    display: flex;
+    flex-direction: column;
+}
+/* for responsive */
+/* .chambre_info div{
+    width: 50%;
+} */
+
+.chambre_info div img{
+    margin-top: 2rem;
+    display: block;
+    width: 100%;
+}
+
+.bas_de_page_chambre {
+    margin: 1.5rem 0;
+
+
+}
+
+.flower_separator img{
+    display: block;
+    width: 100%;
+    transform: rotate(180deg);
+}
+
+
+.container_room h2{
+    text-align: justify;
+}
+
+.links_room {
+    display: flex;
+    justify-content: space-around;
+}
+.links_room > div{
+    padding: 1rem;
+    width: 100%;
+    background-color: var(--light-gray);
+    margin: 0 .2rem;
+    text-align: center;
+    transition: all .4s ease-in-out;
+}
+.links_room > div:hover{
+    background-color: var(--ocre);
+}
+
+.links_room > div:hover a{
+    color: var(--gray);
+}
+
+/* ********************************************************************* */
+/*                             MAIN - INDEX                              */
+/* ********************************************************************* */
+
+
+
+/* *********** Carousel Page d'accueil ******************** */
+
+.slider{
+    width: 100%;
+    margin: 0;
+}
+
+#slide_wrapper{
+    width: 100%;
+    /* height: 200px; */
+    overflow: hidden;
+}
+
+#slide_wrapper img{
+    width: 100%;  
+    display: block;
+}
+
+/* ********************************************* */
+
+.reservation_accueil{
+    background-color: var(--darker-gray);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 0;
+    margin: 0;
+}
+.reservation_accueil div label, input{
+    display: block;
+    margin-bottom: 3rem;
+}
+
+.reservation_accueil div{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.reservation_accueil label{
+    color: var(--ocre);
+}
+.reservation_accueil input{
+    border-radius: 20px;
+    text-align: center;
+    border: none;
+}
+.reservation_accueil button{
+    width: 50%;
+    border: none;
+    text-transform: uppercase;
+    background-color: var(--light-gray);
+    padding: 1rem;
+    border-radius: 20px;
+    display: block;
+}
+.reservation_accueil button a{
+    color: var(--white-bckg-text);
+}
+.reservation_accueil button:hover{
+    background-color: var(--ocre);
+    color: var(--white-bckg-text);
+}
+
+/* ********************************************* */
+
+/* texte d'acceuil du PDG Parimis 3 section titre + étoiles + (Photo + texte) */
+
+.text_accueil{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.text_accueil h2{
+    text-transform: uppercase;
+    margin-bottom: .5rem;
+}
+.text_accueil i{
+    color: var(--ocre);
+}
+.text_accueil p{
+    text-align: justify;
+    margin: 3rem;
+}
+/* .pdg article p:first-child{
+    margin: 5rem;
+} */
+
+/* section dans laquelle se trouve la photo et le texte du PDG*/
+.pdg{
+    margin: 3rem auto;
+    display: flex;
+    flex-direction: column;
+}
+.pdg img{
+    display: block;
+    width: 100%;
+}
+/* signature du pdg */
+.signature{
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+}
+.signature p{
+    margin: 0 3rem;
+    text-align: end;
+}
+
+
+
+/* ********************************************* */
+
+.primes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--lighter-gray);
+    padding: 3rem 0;
+}
+
+.primes div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.primes i{
+    background-color: var(--ocre);
+    padding: 5rem;
+    border-radius: 50%;
+    font-size: 3rem;
+    color: var(--gray);
+}
+.primes div p{
+    width: 50%;
+}
+.primes div p:nth-child(even){
+    margin-top: 1rem;
+}
+/* ********************************************* */
+
+.rooms{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--white-bckg-text);
+    padding: 3rem 0;
+}
+.rooms h2{
+    text-transform: uppercase;
+    margin-bottom: .5rem;
+}
+.rooms i{
+    color: var(--ocre);
+}
+
+
+/* ********************   Room Cards   ************************ */
+
+.mini_carte_chambre{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.mini_carte_chambre article{
+	width: 100%;
+    margin: 1.5rem;
+    background: var(--lighter-gray);
+}
+.mini_carte_chambre article img{
+	width: 100%;
+}
+
+/* texte */
+.contentOne{
+    padding: 5rem;
+}
+.contentOne div{
+	text-align: center;
+}
+.surTitre{
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    letter-spacing: .25rem;
+    padding: 0 0 1.5rem 0;
+    color: var(--graylight-text);
+    font-weight: 200;
+    text-align: center;
+}
+.surTitre::after{
+    content: '';
+    display: block;
+    width: 50%;
+    height: .1rem;
+    background-color: var(--graylight);
+    margin: 0 auto;
+    margin-top: 1.5rem;
+}
+.contentOne h2{
+    font-size: 3rem;
+    font-weight: 400;
+    text-align: center;
+}
+.one_desc{
+    color: var(--graylight-text);
+    text-align: justify;
+    font-weight: 300;
+    line-height: 2.5rem;
+}
+/* button de réservation depuis la page d'accueil*/
+.btn_rooms{
+    margin-top: 4.5rem;
+    
+    transition: transform .5s;
+}
+.btn_rooms a{
+    /* background-color: var(--light-gray); */
+    color: var(--gray);
+    border: .2rem solid var(--ocre);
+    padding: 1rem 2.5rem;
+    text-transform: uppercase;
+
+    transition: all .4s;
+}
+.btn_rooms a:hover {
+    background-color: var(--ocre);
+    color: var(--white-bckg-text);
+}
+.btn_rooms:hover {
+    transform: scale(1.1);
+}
+
+
+/* ************************************************** */
+.reason{
+    background-color: var(--gray);
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 0;
+    color: var(--white-bckg-text);
+}
+.reason h2{
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+.reason div:first-child{
+    text-align: center;
+}
+
+.services{
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+.services article{
+    width: 50%;
+    text-align: center;
+    border: .1px solid var(--ocre);
+    margin: .5rem;
+}
+.services i{
+    font-size: 5rem;
+}
+
+/* ************************************************** */
+
+.events{
+    padding: 3rem 0;
+}
+.events h2{
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--darker-gray);
+}
+
+/* les cartes des évènements à venir */
+.sous_section_evenement{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.sous_section_evenement article{
+    position: relative;
+    text-align: center;
+    margin: 3rem;
+    background-color: var(--light-gray);
+    border-radius: 5px;
+}
+.sous_section_evenement div{
+    width: 100%;
+}
+
+.sous_section_evenement img{
+    background-color: var(--white-bckg-text);
+    display: block;
+    width: 100%;
+    /* max-width: 100%;
+    max-height: 100%;
+    object-fit: 100%; */
+    border-radius: 5px 5px 0 0;
+}
+
+.events article h4{
+    text-transform: uppercase;
+    color: var(--ocre);
+    font-size: 2rem;
+}
+.events p:last-child{
+    padding: 2rem;
+    text-align: center;
+    color: var(--white-bckg-text);
+}
+.event_date{
+    position: absolute;
+    top: 0;
+    left: -100rem;
+    padding: 1rem;
+    background-color: var(--ocre);
+    font-size: 3rem;
+    border-radius: 0 5px 5px 0;
+    color: var(--gray);
+    transition: all .5s ease-in-out;
+}
+.events article:hover .event_date{
+    left: 0;
+}
+
+/* ********************************************************************* */
+/*                             MAIN - ABOUT                              */
+/* ********************************************************************* */
+
+
+#main_about{
+    margin: 2rem;
+}
+#main_about h1{
+    text-align: center;
+}
+
+/* section 1 : images */
+
+/* on efface les deux dernières photos en mode portable pour les faire apparaitre à partir de 700px  */
+
+.photo_about_head div{
+    width: 100%;
+}
+.photo_about_head div img{
+    display: block;
+    width: 100%;
+}
+.photo_about_head div:nth-child(2){
+    display: none;
+}
+.photo_about_head div:nth-child(3){
+    display: none;
+}
+
+/* section 2 : texte à propos d e l'hôtel */
+
+.main_about_luxe h2{
+    text-align: center;
+}
+.main_about_luxe p{
+    text-align: justify;
+}
+
+/* section 3 : image en position fixed */
+.main_about_image_fixed{
+    width: 100%;
+    height: 200px;
+    background-image: url(../img/parimis_lobby.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+.main_about_image_fixed li{
+    text-align: justify;
+}
+
+/* section 4 : icon vers des liens */
+.link_homePage{
+    display: flex;
+    justify-content: space-around;
+}
+#newsPaper{
+    color: var(--white-bckg-text);
+}
+.link_homePage div{
+    background-color: var(--ocre);
+    padding: 2rem;
+    border-radius: 50%;
+}
+.link_homePage div:hover a{
+    color: var(--gray);
+}
+
+.link_homePage>#newsPaper{
+    color:white;
+}
+
+
+
+
+
+/* ********************************************************************* */
+/*                             MAIN - RESERVATION                              */
+/* ********************************************************************* */
+
+/* Reservation section 1 : Titre + Image */
+
+.main_reservation_header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.main_reservation_header div{
+    margin-bottom: 0;
+    width: 100%;
+}
+.main_reservation_header div img{
+    width: 100%;
+    display: block;
+    /* overflow: hidden; */
+}
+
+/* Reservation section 2 : date picker (le même que dans la page d'accueil) */
+
+/* Reservation section 3 : le formulaire de reservation  */
+
+.reservation_hotel {
+    border-radius: 5px;
+    margin: 1rem;
+    padding: 1rem;
+}
+.form_reserv{
+    background-color: var(--lighter-gray);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+.reservation_hotel h5{
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+/* type de chambre */
+.choix_chambre p:first-child{
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+.choix_chambre div{
+    padding-left: 1rem ;
+    width: 100%;
+    display: flex;
+}
+.choix_chambre div label{
+    padding-left: 1rem;
+}
+
+/* nombre de personne */
+.nombre_de_personne p:first-child{
+    text-decoration: underline;
+}
+
+/* animaux de compagnie */
+.animaux_de_compagnie >p{
+    margin-bottom: 0;
+    text-decoration: underline;
+}
+.animaux_de_compagnie article{
+    display: flex;
+}
+.animaux_de_compagnie article p{
+    display: flex;
+}
+.animaux_de_compagnie article label{
+    padding: 0 1rem;
+}
+
+/* date et flexibilite*/
+.flexibilite{
+    display: flex;
+}
+.flexibilite label{
+    padding-left: 1rem;
+}
+
+
+
+/* ********************************************************************* */
+/*                       MAIN - RECRUTEMENT                              */
+/* ********************************************************************* */
+
+#main_recrutement{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    padding: 2rem;
+}
+/* le aside sera traité à la fin de cette partie puisque il sera uniquement accéssible par portable à la fin de la page */
+
+/* section container recrutement */
+
+#main_recrutement article{
+    width: 100%;
+}
+
+
+
+.container_recrutement {
+    width: 100%;
+}
+
+
+/* ****** article 1 : Title/texte *******  */
+#main_recrutement h1{
+    text-align: center;
+}
+.article_recrutement_un p{
+    text-align: justify;
+    padding: 2rem;
+}
+
+/* ****** article 2 : Photo/texte *******  */
+.article_recrutement_deux div{
+    width: 100%;
+}
+.article_recrutement_deux img{
+    width: 100%;
+    overflow: hidden;
+}
+.article_recrutement_deux p{
+    text-align: center;
+}
+
+/* ****** article 3 : Identité/input *******  */
+.article_recrutement_trois {
+    background-color: var(--lighter-gray);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.article_recrutement_trois h3{
+    text-transform: uppercase;
+    padding-left: 1rem;
+}
+
+.article_recrutement_trois div{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.article_recrutement_trois div p:first-child{
+    margin-bottom: 0;
+}
+.article_recrutement_trois div input{
+    width: 100%;
+    line-height: 3rem;
+}
+
+/* *** article 4 : CV/lettre de motivation ***  */
+
+.article_recrutement_quatre {
+    background-color: var(--lighter-gray);
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.article_recrutement_quatre div{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.article_recrutement_quatre div p:first-child{
+    margin-bottom: 0;
+}
+.article_recrutement_quatre div p:last-child{
+    padding-left: 1rem;
+}
+.article_recrutement_quatre input{
+    line-height: 3rem;
+}
+
+/* ****** article 5 : libre texte *******  */
+.article_recrutement_cinq {
+    background-color: var(--lighter-gray);
+    border-radius: 5px;
+    padding: 0.1rem 1rem ;
+    margin-bottom: 1rem;
+}
+.article_recrutement_cinq textarea{
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* ****** article 6 : submit btn *******  */
+.article_recrutement_six {
+    display: flex;
+    justify-content: center;
+}
+.article_recrutement_six p{
+    display: flex;
+    justify-content: center;
+}
+.article_recrutement_six input{
+    border: none;
+    padding: 1rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+    background-color: var(--light-gray);
+    color: var(--ocre);
+    cursor: pointer;
+
+    transition: all .4s ease-in-out;
+}
+
+.article_recrutement_six input:hover{
+    background-color: var(--ocre);
+    color: var(--white-bckg-text);
+    transform: scale(1.1);
+}
+
+#main_recrutement aside{
+    background-color: var(--light-gray);
+    border-radius: 5px;
+}
+#main_recrutement aside p a{
+    padding-left: 1rem;
+    color: var(--ocre);
+    font-size: 2rem;
+}
+
+#main_recrutement aside p::after{
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: var(--white-bckg-text);
+    width: 10%;
+    transform: translateX(-200px);
+
+    transition: all .4s ease-in-out;
+}
+
+#main_recrutement aside p:hover::after{
+    transform: translateX(10px);
+}
+
+
+
+
+/* ********************************************************************* */
+/*                             MAIN - RESTAURANT                         */
+/* ********************************************************************* */
+
+
+#restaurant_main{
+    text-align: center;
+    padding: 1rem;
+}
+.restaurant_mot_chef{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+}
+
+.containerImgTxt img{
+    display: block;
+    width: 100%;
+}
+
+.container_restaurant{
+    display: flex;
+    flex-direction: column;
+}
+.resto_photo_plat {
+    width: 100%;
+}
+.resto_photo_plat img{
+    width: 100%;
+    display: block;
+}
+.container_restaurant article{
+    display: flex;
+    flex-direction: column;
+    text-align: center;;
+}
+.motif{
+    width: 100%;
+}
+.motif img{
+    margin: 1rem 0;
+    display: block;
+    width: 100%;
+}
+
+
+/* ********************************************************************* */
+/*                             MAIN - AVIS                               */
+/* ********************************************************************* */
+
+#main_avis{
+    margin: 2rem;
+}
+
+#main_avis h1{
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* les nouveaux commentaires */
+
+.main_user_review{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.main_user_review aside{
+    width: 100%;
+    background-color: var(--lighter-gray);
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+.main_user_review aside input{
+    margin-top: 1rem;
+}
+.main_user_review aside p:first-child{
+    text-transform: uppercase;
+
+}
+
+.main_user_review article textarea{
+    width: 100%;
+    padding-top: 1rem ;
+    margin-top: 1rem;
+}
+
+
+
+
+/* Les commentaires */
+
+.client_rieview {
+    text-align: justify;
+    background-color: var(--lighter-gray);
+    border-radius: 5px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+
+.client_rieview p:last-child{
+    text-align: end;
+}
+
+/* ********************************************************************* */
+/*                             MAIN - SPA                              */
+/* ********************************************************************* */
+
+/* c'est la même architecture que la page restaurant */
+
+#spa_main{
+    text-align: center;
+    padding: 1rem;
+}
+.spa_intro{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+}
+
+.containerImgTxt img{
+    display: block;
+    width: 100%;
+}
+
+.container_spa{
+    display: flex;
+    flex-direction: column;
+}
+.photo_spa {
+    width: 100%;
+}
+.photo_spa img{
+    width: 100%;
+    display: block;
+}
+.container_spa article{
+    display: flex;
+    flex-direction: column;
+    text-align: center;;
+}
+.motif{
+    width: 100%;
+}
+.motif img{
+    margin: 1rem 0;
+    display: block;
+    width: 100%;
+}
+
+#spa_main .motif:first-child{
+    display: none;
+}
+
+
+/* ********************************************************************* */
+/*                             MAIN - MENTIONS LEGALES                             */
+/* ********************************************************************* */
+
+#main_mention_legal > h1{
+    text-align: center;
+}
+
+
+
+.containerMentionLegales{
+width: 100%;
+padding: 1rem;
+margin-bottom: 1rem;
+background-color: rgb(198, 194, 194);
+}
+
+.containerMentionLegales > p{
+    text-align: justify;
+}
+.ML_a{
+    color: var(--white-bckg-text);
+}
+
+.containerMentionLegales > h3{
+text-transform: uppercase;
+text-align: center;
+font-family: 'Dancing Script', cursive;;
+}
+
+/* ********************************************************************* */
+/*                             MAIN - CVG                             */
+/* ********************************************************************* */
+
+#main_cvg{
+    text-align: justify;
+    padding: 2rem;
+}
+
+#main_cvg p:nth-child(odd){
+    background-color: var(--lighter-gray);
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+
+
+
+/********************************************************************* */
+/*                             MAIN - ACCES                              */
+/* ********************************************************************* */
+
+/* container access */
+
+#acces_main{
+    margin: 2rem;
+}
+
+#acces_main h1{
+    text-align: center;
+}
+
+.container_acces{
+    display: flex;
+    flex-direction: column;
+}
+.container_acces aside{
+    border: 1rem solid gray;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+.container_acces aside iframe{
+    width: 100%;
+}
+
+.container_acces p:last-child{
+    text-align: end;
+    font-size: 1rem;
+}
+
+
+
+/* accordéon plan pour de transport */
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+    background-color: var(--lighter-gray);
+    color: var(--gray);
+    cursor: pointer;
+    padding: 1rem;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+    background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+    padding: 0 1rem;
+    background-color: var(--white-bckg-text);
+    display: none;
+    overflow: hidden;
+}
+
+.accordion:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+font-size: 1rem;
+color: var(--gray);
+float: right;
+/* margin-left: 5px; */
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+/* 
+.article_recrutement_trois {
+    background-color: var(--lighter-gray);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.article_recrutement_trois h3{
+    text-transform: uppercase;
+    padding-left: 1rem;
+}
+
+.article_recrutement_trois div{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.article_recrutement_trois div p:first-child{
+    margin-bottom: 0;
+}
+.article_recrutement_trois div input{
+    width: 100%;
+    line-height: 3rem;
+}
+.article_recrutement_cinq {
+    background-color: var(--lighter-gray);
+    border-radius: 5px;
+    padding: 0.1rem 1rem ;
+    margin-bottom: 1rem;
+}
+.article_recrutement_cinq textarea{
+    width: 100%;
+    border-radius: 5px;
+}
+
+*/
+
+
+/********************************************************************* */
+/*                             MAIN - EVENEMENTS                             */
+/* ********************************************************************* */
+
+.evenementsParimis{
+    padding: 20px;
+    text-align: center;
+}
+.titreEvenements{
+    text-transform: uppercase;
+    background-color: var(--lighter-gray);
+    text-align: center;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+
+
+
+
+/* ********************************************************************* */
+/*                             FOOTER                                    */
+/* ********************************************************************* */
+
+footer{
+    background-color: var(--gray);
+    position: relative;
+}
+.footer_logo{
+    text-align: center;
+    padding-top: 3rem;
+}
+.footer_logo img{
+    width: 9rem;   
+}
+
+footer a{
+    margin: auto .5rem;
+    transition: all .4s ease-in-out;
+}
+footer a:hover{
+    color: var(--ocre);
+}
+
+
+/* **********      SOCIAL MEDIA NEWSLETTER - GENERAL        *********** */
+.footer_info{
+    /* background-color: violet; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5rem 0;
+}
+
+/* **********      SOCIAL MEDIA        *********** */
+.social_media {
+    color: var(--ocre);
+    display: flex;
+    text-transform: uppercase;
+    justify-content: space-around;
+}
+
+/* **********      NEWS LETTER       *********** */
+
+/*       --- INFO COVID ---      */
+.covid_info i{
+    border-radius: 50%;
+    padding: 1rem;
+    background-color: var(--ocre);
+    transition: all .4s ease-in-out;
+}
+.covid_info i:hover{
+    color: var(--gray);
+}
+
+.covid_info {
+    margin-bottom: 5rem;
+}
+
+.newsLetter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--ocre);
+    margin-top: 3rem;
+}
+
+.newsLetter p{
+    margin: .5rem;
+}
+
+.footer_info input{
+    width: 25rem;
+    line-height: 3rem;
+}
+.footer_info button{
+    background-color: var(--ocre);
+    border: none;
+    text-transform: uppercase;
+    color: var(--white-bckg-text);
+    line-height: 3rem;
+    cursor: pointer;
+}
+
+.copyright{
+    color: var(--white-bckg-text);
+    text-align: center;
+    background-color: var(--darker-gray);
+    padding: 3rem 0;
+    /* position: relative; */
+}
+
+.copyright p:nth-child(2){
+    margin-bottom: 3rem;
+}
+
+.copyright p:nth-child(3){
+    font-size: 1rem;
+}
+
+.info_travail{
+    font-size: 1.5rem;
+    color: var(--white-bckg-text);
+    text-transform: uppercase;
+    line-height: 2rem;
+    background-color: black;
+    padding: 3rem 0;
+}
+
+
+
+
+
+
+
+
+
+
+/* ********************************************************************* */
+/*                             RESPONSIVE DESIGN                              */
+/* ********************************************************************* */
+
+@media only screen and (min-width:481px){
+/* fiche de style pour tous les support plus grand que le téléphone portable */
+
+/* ******* Header ******* */
+
+/* Ajout de padding-bottom pour contenir la barre de recherche  */
+header{
+    position: relative;
+    padding-bottom: 7rem;
+}
+/* replacement de la barre de recherche*/
+header aside:last-child{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+/* ******************************************************** */
+
+/* ******* NAVIGATION ******* */
+
+.responsiveMenu{
+    display: none;
+}
+
+.menu {
+    display: block;
+}
+
+.menu ul{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0;
+}
+
+.menu li{
+    display: inline-block;
+    padding: 20px 0;
+    width: 17%;
+    text-align: center;
+}
+
+.menu li a{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.3rem;
+    color: var(--white-bckg-text);
+}
+
+.sub-menu ul{
+    justify-content: stretch;
+}
+.sub-menu {
+    display: none;
+    font-size: .5rem;
+    position: absolute;
+    left: 0;
+    background-color: var(--ocre);
+    margin-top: 20px;
+    z-index: 1;
+    width: 100%;
+}
+nav ul li:hover{
+    background-color: var(--darker-gray); 
+}
+nav ul li:hover .sub-menu{
+    display: block;
+}
+
+/* ******************************************************** */
+/* ***************************************** */
+/*              MAIN - INDEX                 */
+/* ***************************************** */
+
+
+
+
+/* ******************************************************** */
+
+    /* ******* Mot et signature du PDG ******* */
+
+.pdg{
+    flex-direction: row;
+    align-items: center;
+}
+.pdg img{
+    /* display: block; */
+    width: 50%;
+}
+.pdg article p{
+    margin: 1.2rem 3rem;
+}
+.pdg article{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* signature du pdg */
+.signature{
+    display: flex;
+    flex-direction: column;
+}
+.signature p:last-child{
+    text-align: end;
+}
+
+/* ******************************************************** */
+
+    /* ******* Distinction et récompenses ******* */
+
+.primes{
+    flex-direction: column;
+}
+.primes article{
+    display: flex;
+}
+
+    /* ******* Room Cards ******* */
+
+.mini_carte_chambre article{
+	width: 40%;
+}
+
+    /* ******* reason ******* */
+
+
+.services article{
+    /* background-color: yellowgreen; */
+    width: 25%;
+    margin: .5rem;
+}
+
+/* ************** EVENEMENT À VENIR ************************ */
+
+.sous_section_evenement{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.sous_section_evenement article{
+    width: 50%;
+}
+
+.event_date{
+    left: 0;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+}
+.events article:hover .event_date{
+    opacity: 1;
+}
+
+/* ********* ------- ************* */
+
+
+
+
+
+}
+
+
+
+/* ********************************************** */
+
+
+@media only screen and (min-width:700px){
+
+/* ***************************************** */
+/*              MAIN - INDEX           */
+/* ***************************************** */
+
+    /* ******* RESERVATION ******* */
+
+.reservation_accueil{
+    flex-direction: row;
+    padding: 3rem;
+}
+.reservation_accueil div label, input{
+    margin-bottom: 0;
+}
+.reservation_accueil div label{
+    margin: .5rem .5rem 0 .5rem;
+}
+
+.reservation_accueil button{
+    margin: 0 3rem;
+}
+
+
+/* ***************************************** */
+/*              MAIN - RESTAURANT            */
+/* ***************************************** */
+
+
+/* le texte du chef avec sa photo */
+
+.restaurant_mot_chef{
+    flex-direction: row-reverse;
+    align-items: center;
+}
+.restaurant_mot_chef aside{
+    width: 85%;
+    padding: 3rem;
+}
+
+
+/* la carte des menus */
+
+.container_restaurant{
+    flex-direction: row;
+    align-items: center;
+}
+.resto_photo_plat {
+    width: 50%;
+}
+.container_restaurant article{
+    width: 50%;
+    padding: 0 3rem;
+}
+#restaurant_main section:nth-child(4){
+    flex-direction: row-reverse;
+}
+
+/* ***************************************** */
+/*              MAIN - AVIS            */
+/* ***************************************** */
+
+
+.main_user_review{
+    flex-direction: row;
+    /* align-items: flex-start; */
+}
+.main_user_review aside {
+    width: 50%;
+    margin: 0 1rem 0 0;
+}
+.main_user_review article{
+    width: 50%;
+}
+
+/* ********************************************************************* */
+/*                             MAIN - SPA                              */
+/* ********************************************************************* */
+
+
+.spa_intro{
+    flex-direction: row;
+    align-items: center;
+}
+.spa_intro aside{
+    width: 85%;
+    padding: 3rem;
+    text-align: justify;
+}
+
+/* la carte des menus */
+
+.container_spa{
+    flex-direction: row;
+    align-items: center;
+}
+.photo_spa {
+    width: 50%;
+}
+.container_spa article{
+    width: 50%;
+    padding: 0 3rem;
+}
+#spa_main section:nth-child(odd){
+    flex-direction: row-reverse;
+}
+
+#spa_main .motif:first-child{
+    display: block;
+}
+
+/* ********************************************************************* */
+/*                       MAIN - CHAMBRES CLASSIQUES et les autres                   */
+/* ********************************************************************* */
+
+/* #main_chambre  */
+
+.chambre_info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+/* for responsive */
+.chambre_info div{
+    width: 50%;
+}
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ***************************************** */
+/*              MAIN - RECRUTEMENT           */
+/* ***************************************** */
+
+#main_recrutement {
+    flex-direction: row;
+}
+
+/*  aside est remonté vers le haut à coté de la section  */
+
+#main_recrutement aside{
+    width: 30%;
+    background-color: var(--white-bckg-text);
+    border-right: 1px solid var(--gray);
+    border-radius: 1px;
+    color: var(--gray);
+}
+#main_recrutement aside p a{
+    padding-left: 0;
+    color: var(--gray);
+}
+#main_recrutement aside p::after{
+    background-color: var(--gray);
+}
+#main_recrutement aside p:hover::after{
+    transform: translateX(0px);
+}
+/* section ou se trouve le formulaire de recrutement */
+#main_recrutement section{
+    width: 70%;
+    padding-left: 2rem;
+}
+
+.article_recrutement_quatre div{
+    flex-direction: row;
+    justify-content: space-around;
+}
+.article_recrutement_quatre div p{
+    width: 50%;
+}
+.article_recrutement_quatre div p:first-child{
+    margin: auto;
+    text-align: left;
+    padding-left: 1rem;
+}
+
+.article_recrutement_quatre input{
+    line-height: 2rem;
+}
+
+/* ***************************************** */
+/*              MAIN - RESERVATION           */
+/* ***************************************** */
+
+.reservation_votre_identité div{
+width: 50%;
+}
+
+.reservation_votre_identité p{
+text-align: left;
+}
+
+
+
+
+
+
+
+
+
+/* ********************************************** */
+
+/* pour les téléphones mobiles mode landscape et tablette */
+@media only screen and (min-width:1000px){
+
+    /* ************** SERVICES ************************ */
+.services article{
+
+    width: 20%;
+    margin: 1.5rem;
+}
+
+.services article p{
+    font-size: 2rem;
+}
+
+/* ************** EVENEMENT À VENIR - INDEX ************************ */
+.sous_section_evenement article{
+    width: 25%;
+}
+
+/* ****************** FOOTER ***************** */
+.footer_info{
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 5rem 0;
+}
+
+/* **********      SOCIAL MEDIA        *********** */
+.social_media {
+    width: 30%;
+    color: var(--ocre);
+    text-transform: uppercase;
+    justify-content: space-around;
+}
+
+/* **********      NEWS LETTER       *********** */
+
+.covid_info {
+    margin-bottom: 5rem;
+}
+
+.newsLetter{
+    width: 60%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 0;
+}
+
+/* input et le button */
+.newsLetter p:last-child{
+    display: flex;
+    width: 60%;
+    justify-content: space-around;
+}
+
+
+}
+
+/* to add to text editor  */
+
+/* away of doing the burger menu */
+
+/* .bar1, .bar2, .bar3{
+    width: 35px;
+    height: 5px;
+    background-color: var(--white-bckg-text);
+    margin: 6px 0;
+    transition: .4s;
+} */
+/* .change .bar1{
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+.change .bar2{
+    opacity: 0;
+}
+.change .bar3{
+    -webkit-transform: rotate(-45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+} */
+
+
+.show{
+    display: flex !important;
+}
